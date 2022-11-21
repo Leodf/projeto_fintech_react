@@ -60,3 +60,50 @@ export const relatorios = [
       bgColor: "bg-green-100"
    }
 ]
+
+export const lancamentosGrid = [
+   {
+     field: 'description',
+     headerText: 'Descrição',
+     width: '300',
+     editType: 'dropdownedit',
+     textAlign: 'left',
+   },
+   { field: 'category',
+     headerText: 'Categoria',
+     width: '100',
+     textAlign: 'left',
+   },
+   {
+     field: 'date',
+     headerText: 'Data',
+     format: 'dd/MM/yyyy',
+     textAlign: 'left',
+     editType: 'numericedit',
+     width: '100',
+   },
+   {
+     field: 'value',
+     headerText: 'Valor',
+     width: '100',
+     format: 'C2',
+     editType: 'numericedit',
+     textAlign: 'left',
+   },
+   {
+     field: 'action',
+     headerText: 'Ações',
+     width: '200',
+     textAlign: 'center',
+   },
+]
+
+export const lancamentoData = [
+   {
+      description: 'Recebimento de salário',
+      category: 'Salário',
+      date: new Date().toLocaleDateString(),
+      value: 2500.00,
+      action: 'Editar | Excluir',
+   },
+]

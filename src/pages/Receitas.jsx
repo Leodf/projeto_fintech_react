@@ -1,7 +1,6 @@
 import React from 'react'
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids'
 import { lancamentosGrid, lancamentoData } from '../data/utils'
-import { ordersGrid, ordersData } from '../data/dummy'
 import { Header } from '../components'
 
 const Receitas = () => {
@@ -10,6 +9,7 @@ const Receitas = () => {
       <Header category='Page' title="Receitas" />
       <GridComponent
         id='gridcomp'
+        locale='pt-BR'
         dataSource={lancamentoData}
         allowPaging
         allowSorting

@@ -1,4 +1,5 @@
 
+import { getValue } from '@syncfusion/ej2/base'
 import { FiHome, FiDollarSign, FiCreditCard, FiBarChart, FiUser, FiLogOut  } from 'react-icons/fi'
 
 export const links = [

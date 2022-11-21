@@ -48,12 +48,15 @@ const Sidebar = () => {
         
         <div className="mt-10">
           
-          {links.map((item) => (
+          {links.map((item, index) => (
             <div>
               <NavLink
                 to={`/${item.name}`}
-                key={item.name}
+                key={index}
                 onClick={handleCloseSideBar}
+                style={({ isActive }) => ({
+                  backgroundColor: isActive ? '#03C9D7' : '',
+                })}
                 className={({ isActive }) => (isActive ? activeLink : normalLink)}
               >
                 {item.icon}

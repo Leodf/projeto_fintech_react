@@ -1,11 +1,16 @@
+import { GridRowEditStartReasons } from '@mui/x-data-grid';
 import React from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { Stacked, Button, SparkLine } from '../components';
 import { SparklineAreaData } from '../data/dummy';
-import { relatorios } from '../data/utils'
+import { relatorios, receitasGrid, despesasGrid } from '../data/utils'
 
 const Dashboard = () => {
+  const somaReceitas = receitasGrid.rowsData.reduce((total, valor) => total += valor.value, 0)
+  const somaDespesas = despesasGrid.rowsData.reduce((total, valor) => total += valor.value, 0)
+  const saldoTotal = somaReceitas - somaDespesas
+
   return (
     <div className='mt-12'>
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
@@ -13,7 +18,7 @@ const Dashboard = () => {
           <div className="flex justify-between items-center">
               <div>
                 <p className="font-bold text-gray-400">Saldo</p>
-                <p className="text-2xl">R$ 63.448,78</p>
+                <p className="text-2xl">R$ {saldoTotal.toFixed(2)}</p>
               </div>
               <button
                 type='button'
